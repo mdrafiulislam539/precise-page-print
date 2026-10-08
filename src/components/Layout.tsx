@@ -15,7 +15,7 @@ export function Header() {
         </Link>
         <nav className="flex items-center gap-5 text-sm">
           <Link to="/" className="hidden sm:inline hover:text-primary">হোম</Link>
-          <Link to="/shop" className="hover:text-primary">শপ</Link>
+          <Link to="/shop" search={{}} className="hover:text-primary">শপ</Link>
           <Link to="/checkout" className="btn-outline !px-4 !py-1.5">ব্যাগ ({bn(count)})</Link>
         </nav>
       </div>
@@ -37,7 +37,7 @@ export function Footer() {
         </div>
         <div>
           <p className="text-foreground">শপ</p>
-          <Link to="/shop" className="mt-2 block hover:text-primary">সব কালেকশন দেখুন</Link>
+          <Link to="/shop" search={{}} className="mt-2 block hover:text-primary">সব কালেকশন দেখুন</Link>
         </div>
       </div>
       <p className="pb-6 text-center text-xs text-muted-foreground">© ২০২৬ TonRa Outfits। সর্বস্বত্ব সংরক্ষিত।</p>

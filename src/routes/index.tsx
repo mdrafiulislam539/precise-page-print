@@ -28,7 +28,7 @@ function Index() {
             শাড়ি, থ্রি-পিস, কুর্তি আর ওয়েস্টার্ন ওয়্যারের বাছাই করা কালেকশন — লগইন ছাড়াই মাত্র এক পেজে অর্ডার করুন, পণ্য হাতে পেয়ে মূল্য দিন।
           </p>
           <div className="mt-6 flex justify-center gap-3">
-            <Link to="/shop" className="btn-rose">এখনই কেনাকাটা করুন</Link>
+            <Link to="/shop" search={{}} className="btn-rose">এখনই কেনাকাটা করুন</Link>
           </div>
         </div>
       </section>

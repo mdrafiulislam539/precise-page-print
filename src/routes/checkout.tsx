@@ -55,7 +55,7 @@ function Checkout() {
       <div className="mx-auto max-w-lg px-4 py-20 text-center">
         <h1 className="text-3xl text-rose-gradient">ধন্যবাদ! আপনার অর্ডার সফল হয়েছে</h1>
         <p className="mt-4 text-muted-foreground">অর্ডার নম্বর: <span className="text-primary">{done}</span>। খুব শিগগিরই আমাদের প্রতিনিধি আপনার নম্বরে কল করে অর্ডার কনফার্ম করবেন।</p>
-        <Link to="/shop" className="btn-rose mt-8 inline-block">আরও কেনাকাটা করুন</Link>
+        <Link to="/shop" search={{}} className="btn-rose mt-8 inline-block">আরও কেনাকাটা করুন</Link>
       </div>
     </Page>
   );
@@ -64,7 +64,7 @@ function Checkout() {
     <Page>
       <div className="mx-auto max-w-lg px-4 py-20 text-center">
         <h1 className="text-3xl">আপনার ব্যাগ খালি</h1>
-        <Link to="/shop" className="btn-rose mt-8 inline-block">শপে যান</Link>
+        <Link to="/shop" search={{}} className="btn-rose mt-8 inline-block">শপে যান</Link>
       </div>
     </Page>
   );

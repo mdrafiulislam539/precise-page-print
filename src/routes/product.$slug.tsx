@@ -26,7 +26,7 @@ function ProductPage() {
   const p = Route.useLoaderData();
   const { add } = useCart();
   const nav = useNavigate();
-  const [size, setSize] = useState(p.sizes[0]);
+  const [size, setSize] = useState<string>(p.sizes[0] ?? "");
   const [qty, setQty] = useState(1);
   const buy = (go: boolean) => { add({ slug: p.slug, size, qty }); if (go) nav({ to: "/checkout" }); };
 
