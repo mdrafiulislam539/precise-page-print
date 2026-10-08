@@ -3,7 +3,7 @@ import { Page, ProductCard } from "@/components/Layout";
 import { categories, products } from "@/lib/catalog";
 
 export const Route = createFileRoute("/shop")({
-  validateSearch: (s: Record<string, unknown>): { category?: string } => ({ category: typeof s["category"] === "string" ? s["category"] : undefined }),
+  validateSearch: (s: Record<string, unknown>): { category?: string | undefined } => ({ category: typeof s["category"] === "string" ? s["category"] : undefined }),
   head: () => ({
     meta: [
       { title: "শপ | লেডিস শাড়ি, থ্রি-পিস ও কুর্তি অনলাইনে কিনুন — তনরা আউটফিটস" },
