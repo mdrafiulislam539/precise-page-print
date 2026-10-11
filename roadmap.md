@@ -1,0 +1,3 @@
+- [ ] Add supplied brand story to home and an about page.
+- [ ] Add verified contact details, social links and privacy contact information.
+- [ ] Verify pages and contact links.
