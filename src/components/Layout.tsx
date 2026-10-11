@@ -38,6 +38,7 @@ export function Footer() {
         <div>
           <p className="text-foreground">শপ</p>
           <Link to="/shop" search={{}} className="mt-2 block hover:text-primary">সব কালেকশন দেখুন</Link>
+          <Link to="/privacy" className="mt-2 block hover:text-primary">প্রাইভেসি পলিসি</Link>
         </div>
       </div>
       <p className="pb-6 text-center text-xs text-muted-foreground">© ২০২৬ TonRa Outfits। সর্বস্বত্ব সংরক্ষিত।</p>
