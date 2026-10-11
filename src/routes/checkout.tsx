@@ -12,6 +12,8 @@ export const Route = createFileRoute("/checkout")({
       { name: "description", content: "নাম, মোবাইল নম্বর ও ঠিকানা দিয়ে লগইন ছাড়াই অর্ডার করুন। ক্যাশ অন ডেলিভারি ও বিকাশ/নগদ পেমেন্ট।" },
       { property: "og:title", content: "কুইক অর্ডার — তনরা আউটফিটস" },
       { property: "og:description", content: "এক পেজেই সহজ অর্ডার, কোনো লগইন বা ওটিপি নেই।" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Checkout,

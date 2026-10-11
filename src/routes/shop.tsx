@@ -10,6 +10,8 @@ export const Route = createFileRoute("/shop")({
       { name: "description", content: "তনরা আউটফিটসের সব কালেকশন: বেনারসি শাড়ি, এমব্রয়ডারি থ্রি-পিস, কটন কুর্তি ও ওয়েস্টার্ন ড্রেস সেরা দামে।" },
       { property: "og:title", content: "শপ — তনরা আউটফিটস" },
       { property: "og:description", content: "নারীদের প্রিমিয়াম পোশাকের সম্পূর্ণ কালেকশন।" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Shop,

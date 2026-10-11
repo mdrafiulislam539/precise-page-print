@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Page } from "@/components/Layout";
+import { brand } from "@/lib/brand";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
@@ -8,6 +9,8 @@ export const Route = createFileRoute("/privacy")({
       { name: "description", content: "তনরা আউটফিটসের প্রাইভেসি পলিসি — আপনার ব্যক্তিগত তথ্য আমরা কীভাবে সংগ্রহ, ব্যবহার ও সুরক্ষিত রাখি তা জানুন।" },
       { property: "og:title", content: "প্রাইভেসি পলিসি | তনরা আউটফিটস" },
       { property: "og:description", content: "আপনার তথ্যের নিরাপত্তাই আমাদের অঙ্গীকার।" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Privacy,
@@ -32,7 +35,7 @@ const sections = [
   },
   {
     title: "আপনার অধিকার",
-    body: "আপনি চাইলে যেকোনো সময় আপনার তথ্য সংশোধন বা মুছে ফেলার অনুরোধ করতে পারেন। এ জন্য আমাদের ফোন বা ফেসবুক পেজে মেসেজ করুন — আমরা দ্রুত ব্যবস্থা নেব।",
+    body: "আপনি চাইলে আপনার তথ্য সংশোধন বা মুছে ফেলার অনুরোধ করতে পারেন। এ জন্য আমাদের ফোন, হোয়াটসঅ্যাপ বা ইমেইলে যোগাযোগ করুন।",
   },
   {
     title: "নীতিমালার পরিবর্তন",
@@ -58,8 +61,8 @@ function Privacy() {
           ))}
         </div>
         <p className="mt-10 rounded-xl border bg-card p-6 text-sm leading-7 text-muted-foreground">
-          প্রাইভেসি সংক্রান্ত যেকোনো প্রশ্ন থাকলে আমাদের ফেসবুক পেজে মেসেজ করুন অথবা অর্ডারের সময়
-          দেওয়া নম্বরে কল করুন। আমরা সবসময় আপনার পাশে আছি।
+          প্রাইভেসি সংক্রান্ত প্রশ্ন বা তথ্য সংশোধনের অনুরোধের জন্য কল করুন: <a href={`tel:${brand.phone}`} className="text-primary hover:underline">{brand.phoneLabel}</a>।
+          {" "}ইমেইল: <a href={`mailto:${brand.email}`} className="break-all text-primary hover:underline">{brand.email}</a> অথবা <a href={brand.whatsapp} className="text-primary hover:underline">হোয়াটসঅ্যাপে মেসেজ দিন</a>।
         </p>
       </section>
     </Page>
