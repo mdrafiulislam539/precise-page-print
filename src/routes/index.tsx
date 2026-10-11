@@ -72,6 +72,33 @@ function Index() {
         </div>
       </section>
 
+      <section className="border-y bg-card/50">
+        <div className="mx-auto max-w-6xl px-4 py-12">
+          <h2 className="text-center text-3xl">কেন তনরা আউটফিটস থেকে কিনবেন?</h2>
+          <p className="mt-2 text-center text-muted-foreground">আপনার বিশ্বাসই আমাদের প্রতিশ্রুতি</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {trustPoints.map((tp) => (
+              <div key={tp.title} className="rounded-xl border bg-card p-5 text-center">
+                <h3 className="text-lg text-rose-gradient">{tp.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{tp.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 py-12">
+        <h2 className="text-center text-3xl">সাধারণ জিজ্ঞাসা</h2>
+        <div className="mt-8 space-y-3">
+          {faqs.map((f) => (
+            <details key={f.q} className="group rounded-xl border bg-card p-5 open:shadow-glow">
+              <summary className="cursor-pointer list-none font-medium">{f.q}</summary>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
       <section className="mx-auto max-w-3xl px-4 py-14 text-center">
         <h2 className="text-3xl">আমাদের গল্প</h2>
         <p className="mt-5 leading-8 text-muted-foreground">
