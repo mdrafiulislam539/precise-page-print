@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import logo from "@/assets/logo.png.asset.json";
 import { useCart } from "@/lib/cart";
 import { bn, type Product, price, taka } from "@/lib/catalog";
+import { brand } from "@/lib/brand";
 
 export function Header() {
   const { count } = useCart();
@@ -16,6 +17,8 @@ export function Header() {
         <nav className="flex items-center gap-5 text-sm">
           <Link to="/" className="hidden sm:inline hover:text-primary">হোম</Link>
           <Link to="/shop" search={{}} className="hover:text-primary">শপ</Link>
+          <Link to="/about" className="hidden md:inline hover:text-primary">আমাদের গল্প</Link>
+          <Link to="/contact" className="hidden sm:inline hover:text-primary">যোগাযোগ</Link>
           <Link to="/checkout" className="btn-outline !px-4 !py-1.5">ব্যাগ ({bn(count)})</Link>
         </nav>
       </div>
@@ -26,7 +29,7 @@ export function Header() {
 export function Footer() {
   return (
     <footer className="mt-20 border-t">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 text-sm text-muted-foreground sm:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 text-sm text-muted-foreground sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <p className="font-display text-lg text-rose-gradient">তনরা আউটফিটস</p>
           <p className="mt-2">স্টাইল ফর এভরি ইউ — নারীদের প্রিমিয়াম পোশাকের বিশ্বস্ত অনলাইন শপ।</p>
@@ -38,7 +41,20 @@ export function Footer() {
         <div>
           <p className="text-foreground">শপ</p>
           <Link to="/shop" search={{}} className="mt-2 block hover:text-primary">সব কালেকশন দেখুন</Link>
+          <Link to="/about" className="mt-2 block hover:text-primary">আমাদের গল্প</Link>
+          <Link to="/contact" className="mt-2 block hover:text-primary">যোগাযোগ</Link>
           <Link to="/privacy" className="mt-2 block hover:text-primary">প্রাইভেসি পলিসি</Link>
+        </div>
+        <div className="min-w-0">
+          <p className="text-foreground">যোগাযোগ করুন</p>
+          <a href={`tel:${brand.phone}`} className="mt-2 block hover:text-primary">{brand.phoneLabel}</a>
+          <a href={`mailto:${brand.email}`} className="mt-2 block break-all hover:text-primary">{brand.email}</a>
+          <p className="mt-2 leading-6">{brand.address}</p>
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+            <a href={brand.whatsapp} className="hover:text-primary">হোয়াটসঅ্যাপ</a>
+            <a href={brand.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-primary">ইনস্টাগ্রাম</a>
+            <a href={brand.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-primary">টিকটক</a>
+          </div>
         </div>
       </div>
       <p className="pb-6 text-center text-xs text-muted-foreground">© ২০২৬ TonRa Outfits। সর্বস্বত্ব সংরক্ষিত।</p>

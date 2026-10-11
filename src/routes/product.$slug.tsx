@@ -17,6 +17,7 @@ export const Route = createFileRoute("/product/$slug")({
       { property: "og:title", content: loaderData.name },
       { property: "og:description", content: loaderData.short_description },
       { property: "og:type", content: "product" },
+      { name: "twitter:card", content: "summary" },
     ] : [],
   }),
   component: ProductPage,

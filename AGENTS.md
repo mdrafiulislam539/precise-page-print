@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep public business contact data in a shared browser-safe brand module so contact, footer and policy pages remain consistent and portable.

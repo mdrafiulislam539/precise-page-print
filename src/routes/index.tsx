@@ -10,6 +10,10 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "TonRa Outfits — বাংলাদেশে নারীদের প্রিমিয়াম শাড়ি, থ্রি-পিস, কুর্তি ও ওয়েস্টার্ন ওয়্যার অনলাইনে কিনুন। ক্যাশ অন ডেলিভারি, সারাদেশে হোম ডেলিভারি।" },
       { property: "og:title", content: "তনরা আউটফিটস — স্টাইল ফর এভরি ইউ" },
       { property: "og:description", content: "নারীদের প্রিমিয়াম ফ্যাশন: শাড়ি, থ্রি-পিস, কুর্তি ও ওয়েস্টার্ন ওয়্যার।" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: banner.url },
+      { name: "twitter:image", content: banner.url },
     ],
   }),
   component: Index,
@@ -100,10 +104,12 @@ function Index() {
       </section>
 
       <section className="mx-auto max-w-3xl px-4 py-14 text-center">
-        <h2 className="text-3xl">আমাদের গল্প</h2>
+        <p className="mb-3 text-sm text-primary">দুটি নাম, একটি স্বপ্ন</p>
+        <h2 className="text-3xl">রাফি ও টনির তনরা আউটফিটস</h2>
         <p className="mt-5 leading-8 text-muted-foreground">
-          তনরা আউটফিটসের যাত্রা শুরু একটি সহজ স্বপ্ন থেকে — প্রতিটি নারী যেন নিজের পছন্দের পোশাকে আত্মবিশ্বাসী ও সুন্দর অনুভব করেন। দেশীয় ঐতিহ্যের শাড়ি ও থ্রি-পিস থেকে শুরু করে আধুনিক ওয়েস্টার্ন ওয়্যার — প্রতিটি পোশাক আমরা বাছাই করি মানসম্মত ফেব্রিক, নিখুঁত সেলাই আর ট্রেন্ডি ডিজাইনের কথা ভেবে। কারণ আমাদের বিশ্বাস: স্টাইল সবার জন্য, আর আপনার স্টাইলই আমাদের অগ্রাধিকার।
+          রাফি ও টনি—আমাদের দুজনের নামের ছোঁয়া থেকেই তনরা আউটফিটস। একটি ল্যাপটপ আর পোশাকের প্রতি ভালোবাসা নিয়ে ঘর থেকে শুরু হয়েছিল এই পথচলা। আমাদের স্বপ্ন, প্রতিটি নারী যেন সাশ্রয়ী দামে নিজের রুচির পোশাক খুঁজে পান এবং আত্মবিশ্বাসী অনুভব করেন। শিক্ষার্থী, কর্মজীবী নারী কিংবা গৃহিণী—স্টাইল সবার জন্য, আর আপনার স্টাইলই আমাদের অগ্রাধিকার।
         </p>
+        <Link to="/about" className="mt-6 inline-block text-primary underline underline-offset-4">আমাদের পুরো গল্প পড়ুন →</Link>
       </section>
     </Page>
   );
