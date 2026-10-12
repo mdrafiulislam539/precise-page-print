@@ -4,7 +4,10 @@ import { Page } from "@/components/Layout";
 import { deliveryInfo, getProduct, price, sizeChart, taka } from "@/lib/catalog";
 import { useCart } from "@/lib/cart";
 
+const SITE_URL = "https://precise-page-print.lovable.app";
+
 export const Route = createFileRoute("/product/$slug")({
+  staticData: { sitemap: true },
   loader: ({ params }) => {
     const p = getProduct(params.slug);
     if (!p) throw notFound();
@@ -19,6 +22,24 @@ export const Route = createFileRoute("/product/$slug")({
       { property: "og:type", content: "product" },
       { name: "twitter:card", content: "summary" },
     ] : [],
+    scripts: loaderData ? [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: loaderData.name,
+        description: loaderData.short_description,
+        image: loaderData.images.map((src) => new URL(src, SITE_URL).href),
+        brand: { "@type": "Brand", name: "TonRa Outfits" },
+        offers: {
+          "@type": "Offer",
+          url: `${SITE_URL}/product/${loaderData.slug}`,
+          priceCurrency: "BDT",
+          price: price(loaderData),
+          availability: "https://schema.org/InStock",
+        },
+      }),
+    }] : [],
   }),
   component: ProductPage,
 });

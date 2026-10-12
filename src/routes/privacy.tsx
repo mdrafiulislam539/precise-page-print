@@ -3,6 +3,7 @@ import { Page } from "@/components/Layout";
 import { brand } from "@/lib/brand";
 
 export const Route = createFileRoute("/privacy")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "প্রাইভেসি পলিসি | তনরা আউটফিটস" },

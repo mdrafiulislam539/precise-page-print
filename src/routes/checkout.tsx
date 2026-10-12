@@ -6,6 +6,7 @@ import { useCart } from "@/lib/cart";
 import { deliveryCharge, districts } from "@/lib/shipping";
 
 export const Route = createFileRoute("/checkout")({
+  staticData: { sitemap: false },
   head: () => ({
     meta: [
       { title: "কুইক অর্ডার — লগইন ছাড়াই অর্ডার করুন | তনরা আউটফিটস" },

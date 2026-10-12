@@ -3,6 +3,7 @@ import { Page, ProductCard } from "@/components/Layout";
 import { categories, products } from "@/lib/catalog";
 
 export const Route = createFileRoute("/shop")({
+  staticData: { sitemap: true },
   validateSearch: (s: Record<string, unknown>): { category?: string | undefined } => ({ category: typeof s["category"] === "string" ? s["category"] : undefined }),
   head: () => ({
     meta: [
