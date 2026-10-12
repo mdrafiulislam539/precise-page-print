@@ -6,6 +6,7 @@ import { useCart } from "@/lib/cart";
 import { deliveryCharge, districts } from "@/lib/shipping";
 
 export const Route = createFileRoute("/checkout")({
+  staticData: { sitemap: false },
   head: () => ({
     meta: [
       { title: "কুইক অর্ডার — লগইন ছাড়াই অর্ডার করুন | তনরা আউটফিটস" },
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/checkout")({
       { property: "og:description", content: "এক পেজেই সহজ অর্ডার, কোনো লগইন বা ওটিপি নেই।" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "robots", content: "noindex" },
     ],
   }),
   component: Checkout,
@@ -77,19 +79,19 @@ function Checkout() {
         <div className="space-y-4">
           <h1 className="text-3xl">কুইক অর্ডার</h1>
           <p className="text-sm text-muted-foreground">লগইন বা অ্যাকাউন্টের প্রয়োজন নেই — শুধু তথ্য দিয়ে অর্ডার কনফার্ম করুন।</p>
-          <input name="name" required placeholder="আপনার নাম *" className="field" />
-          <input name="phone" required inputMode="numeric" placeholder="মোবাইল নম্বর * (01XXXXXXXXX)" className="field" />
+          <input name="name" required aria-label="আপনার নাম" placeholder="আপনার নাম *" className="field" />
+          <input name="phone" required inputMode="numeric" aria-label="মোবাইল নম্বর" placeholder="মোবাইল নম্বর * (01XXXXXXXXX)" className="field" />
           <div className="grid gap-4 sm:grid-cols-2">
-            <select required value={district} onChange={(e) => setDistrict(e.target.value)} className="field">
+            <select aria-label="জেলা" required value={district} onChange={(e) => setDistrict(e.target.value)} className="field">
               <option value="">জেলা নির্বাচন করুন *</option>
               {Object.keys(districts).map((d) => <option key={d}>{d}</option>)}
             </select>
-            <select name="thana" required className="field" disabled={!district}>
+            <select aria-label="থানা" name="thana" required className="field" disabled={!district}>
               <option value="">থানা নির্বাচন করুন *</option>
               {(districts[district] || []).map((t) => <option key={t}>{t}</option>)}
             </select>
           </div>
-          <textarea name="address" required rows={3} placeholder="সম্পূর্ণ ঠিকানা (বাসা, রোড, এলাকা) *" className="field" />
+          <textarea aria-label="সম্পূর্ণ ঠিকানা" name="address" required rows={3} placeholder="সম্পূর্ণ ঠিকানা (বাসা, রোড, এলাকা) *" className="field" />
 
           <h2 className="pt-2 text-xl">পেমেন্ট পদ্ধতি</h2>
           <div className="grid gap-3 sm:grid-cols-3">
@@ -102,7 +104,7 @@ function Checkout() {
               <p className="text-muted-foreground">
                 {pay === "bkash" ? "বিকাশ" : "নগদ"} মার্চেন্ট নম্বর <span className="text-primary">01XXXXXXXXX</span>-এ মোট {taka(total)} "পেমেন্ট" করুন, তারপর ট্রানজেকশন আইডি নিচে দিন।
               </p>
-              <input name="trx" placeholder="ট্রানজেকশন আইডি *" className="field mt-3" />
+              <input aria-label="ট্রানজেকশন আইডি" name="trx" placeholder="ট্রানজেকশন আইডি *" className="field mt-3" />
             </div>
           )}
           {err && <p className="text-sm text-destructive">{err}</p>}

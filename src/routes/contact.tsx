@@ -4,6 +4,7 @@ import { Page } from "@/components/Layout";
 import { brand } from "@/lib/brand";
 
 export const Route = createFileRoute("/contact")({
+  staticData: { sitemap: true },
   head: () => ({ meta: [
     { title: "যোগাযোগ ও ঠিকানা | তনরা আউটফিটস, শ্যামলী, ঢাকা" },
     { name: "description", content: "তনরা আউটফিটসের সঙ্গে ফোন, হোয়াটসঅ্যাপ বা ইমেইলে যোগাযোগ করুন। ঠিকানা: ৩৫/এফ/৬/এ, রোড-০২, শ্যামলী, ঢাকা, ১২০৭।" },

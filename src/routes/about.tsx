@@ -3,6 +3,7 @@ import { Page } from "@/components/Layout";
 import logo from "@/assets/logo.png.asset.json";
 
 export const Route = createFileRoute("/about")({
+  staticData: { sitemap: true },
   head: () => ({ meta: [
     { title: "আমাদের গল্প, লক্ষ্য ও স্বপ্ন | তনরা আউটফিটস" },
     { name: "description", content: "রাফি ও টনির স্বপ্ন থেকে তনরা আউটফিটসের পথচলা। বাংলাদেশের নারীদের জন্য সাশ্রয়ী, মার্জিত ও ট্রেন্ডি পোশাক নিয়ে আমাদের লক্ষ্য ও স্বপ্ন জানুন।" },

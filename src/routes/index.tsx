@@ -4,6 +4,7 @@ import { Page, ProductCard } from "@/components/Layout";
 import { categories, products } from "@/lib/catalog";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "তনরা আউটফিটস | শাড়ি, থ্রি-পিস, কুর্তি ও ওয়েস্টার্ন ড্রেস অনলাইন শপ" },
