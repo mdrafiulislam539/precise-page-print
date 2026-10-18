@@ -1,117 +1,50 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, ArrowUpRight, Truck, Banknote, MessageCircle, Plus } from "lucide-react";
 import banner from "@/assets/banner.png.asset.json";
 import { Page, ProductCard } from "@/components/Layout";
-import { categories, products } from "@/lib/catalog";
+import { Button } from "@/components/ui/button";
+import { categories, products, bn } from "@/lib/catalog";
+import { brand } from "@/lib/brand";
 
 export const Route = createFileRoute("/")({
-  staticData: { sitemap: true },
-  head: () => ({
-    meta: [
-      { title: "তনরা আউটফিটস | শাড়ি, থ্রি-পিস, কুর্তি ও ওয়েস্টার্ন ড্রেস অনলাইন শপ" },
-      { name: "description", content: "TonRa Outfits — বাংলাদেশে নারীদের প্রিমিয়াম শাড়ি, থ্রি-পিস, কুর্তি ও ওয়েস্টার্ন ওয়্যার অনলাইনে কিনুন। ক্যাশ অন ডেলিভারি, সারাদেশে হোম ডেলিভারি।" },
-      { property: "og:title", content: "তনরা আউটফিটস — স্টাইল ফর এভরি ইউ" },
-      { property: "og:description", content: "নারীদের প্রিমিয়াম ফ্যাশন: শাড়ি, থ্রি-পিস, কুর্তি ও ওয়েস্টার্ন ওয়্যার।" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: banner.url },
-      { name: "twitter:image", content: banner.url },
-    ],
-  }),
-  component: Index,
+  staticData: { sitemap:true },
+  head: () => ({ meta:[
+    { title:"তনরা আউটফিটস | শাড়ি, থ্রি-পিস, কুর্তি ও ওয়েস্টার্ন ড্রেস" },
+    { name:"description", content:"তনরা আউটফিটসে নারীদের শাড়ি, থ্রি-পিস, কুর্তি ও ওয়েস্টার্ন পোশাকের বাছাই করা কালেকশন। সারাদেশে ডেলিভারি ও ক্যাশ অন ডেলিভারি।" },
+    { property:"og:title", content:"তনরা আউটফিটস — আপনার স্টাইল, আমাদের অগ্রাধিকার" },
+    { property:"og:description", content:"রুচি, স্বাচ্ছন্দ্য ও আত্মবিশ্বাসের জন্য বাছাই করা নারীদের পোশাক।" },
+    { property:"og:type", content:"website" },
+    { name:"twitter:card", content:"summary_large_image" },
+  ] }),
+  component:Index,
 });
-
-const trustPoints = [
-  { title: "ক্যাশ অন ডেলিভারি", text: "পণ্য হাতে পেয়ে, দেখে-বুঝে তারপর মূল্য পরিশোধ করুন।" },
-  { title: "লগইন ছাড়াই অর্ডার", text: "কোনো অ্যাকাউন্ট বা পাসওয়ার্ড ছাড়াই মাত্র এক পেজে অর্ডার সম্পন্ন করুন।" },
-  { title: "সারাদেশে হোম ডেলিভারি", text: "ঢাকার ভেতরে ৳৮০ ও ঢাকার বাইরে ৳১৫০ চার্জে দেশের যেকোনো প্রান্তে ডেলিভারি।" },
-  { title: "মানসম্মত পণ্যের প্রতিশ্রুতি", text: "প্রতিটি পোশাক বাছাই করা হয় ভালো ফেব্রিক ও নিখুঁত সেলাই যাচাই করে।" },
-];
-
 const faqs = [
-  { q: "অর্ডার করতে কি অ্যাকাউন্ট লাগবে?", a: "না। নাম, মোবাইল নম্বর ও ঠিকানা দিয়েই এক পেজে অর্ডার করা যায় — কোনো লগইন বা রেজিস্ট্রেশনের দরকার নেই।" },
-  { q: "পেমেন্ট কীভাবে করব?", a: "ক্যাশ অন ডেলিভারি, বিকাশ বা নগদ — যেকোনো একটি মাধ্যমে পেমেন্ট করতে পারবেন।" },
-  { q: "ডেলিভারি পেতে কতদিন লাগে?", a: "ঢাকার ভেতরে সাধারণত ১–২ দিন এবং ঢাকার বাইরে ২–৪ দিনের মধ্যে ডেলিভারি পৌঁছে যায়।" },
-  { q: "পণ্য পছন্দ না হলে কী হবে?", a: "ডেলিভারি ম্যানের সামনে পণ্য চেক করুন। কোনো সমস্যা থাকলে সাথে সাথে আমাদের জানান — আমরা সমাধান করে দেব।" },
-  { q: "আমার ব্যক্তিগত তথ্য কি নিরাপদ?", a: "সম্পূর্ণ নিরাপদ। আপনার তথ্য শুধু ডেলিভারির কাজে ব্যবহৃত হয়, কারো কাছে বিক্রি বা শেয়ার করা হয় না। বিস্তারিত জানুন আমাদের প্রাইভেসি পলিসি পেজে।" },
+  { q:"ডেলিভারি চার্জ কত?", a:"ঢাকার ভেতরে ৳৮০ ও ঢাকার বাইরে ৳১৫০। অর্ডারের ঠিকানা অনুযায়ী মোট মূল্য দেখতে পারবেন।" },
+  { q:"সঠিক সাইজ বেছে নিতে কীভাবে সহায়তা পাব?", a:"পণ্যের পেজে দেওয়া সাইজ ও মাপ দেখুন। সাইজ বা ফেব্রিক সম্পর্কে বিস্তারিত জানতে আমাদের হোয়াটসঅ্যাপে যোগাযোগ করুন।" },
+  { q:"অর্ডারের জন্য কি অ্যাকাউন্ট প্রয়োজন?", a:"না। নাম, মোবাইল নম্বর ও সম্পূর্ণ ঠিকানা দিয়ে অর্ডারের তথ্য পূরণ করতে পারবেন।" },
 ];
-
 function Index() {
-  return (
-    <Page>
-      <section className="relative">
-        <img src={banner.url} alt="TonRa Outfits ব্যানার — নারীদের প্রিমিয়াম পোশাক" className="w-full" />
-        <div className="mx-auto max-w-6xl px-4 py-10 text-center">
-          <h1 className="text-3xl leading-snug sm:text-5xl">
-            নারীদের প্রিমিয়াম ফ্যাশন, <span className="text-rose-gradient">আপনার স্টাইলে</span>
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            শাড়ি, থ্রি-পিস, কুর্তি আর ওয়েস্টার্ন ওয়্যারের বাছাই করা কালেকশন — লগইন ছাড়াই মাত্র এক পেজে অর্ডার করুন, পণ্য হাতে পেয়ে মূল্য দিন।
-          </p>
-          <div className="mt-6 flex justify-center gap-3">
-            <Link to="/shop" search={{}} className="btn-rose">এখনই কেনাকাটা করুন</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-10">
-        <h2 className="text-center text-3xl">ক্যাটাগরি অনুযায়ী কেনাকাটা</h2>
-        <p className="mt-2 text-center text-muted-foreground">উৎসব থেকে প্রতিদিন — প্রতিটি মুহূর্তের জন্য পারফেক্ট লেডিস ড্রেস</p>
-        <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {categories.map((c) => (
-            <Link key={c.slug} to="/shop" search={{ category: c.slug }} className="group relative overflow-hidden rounded-xl border">
-              <img src={c.image} alt={`${c.name} কালেকশন`} loading="lazy" width={768} height={1024} className="aspect-[3/4] w-full object-cover transition duration-500 group-hover:scale-105" />
-              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-background via-background/30 to-transparent p-4">
-                <h3 className="text-xl text-rose-gradient">{c.name}</h3>
-                <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{c.description}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-10">
-        <h2 className="text-center text-3xl">বেস্ট সেলিং প্রোডাক্টস</h2>
-        <p className="mt-2 text-center text-muted-foreground">আমাদের কাস্টমারদের সবচেয়ে পছন্দের পোশাকগুলো</p>
-        <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {products.filter((p) => p.featured).map((p) => <ProductCard key={p.id} p={p} />)}
-        </div>
-      </section>
-
-      <section className="border-y bg-card/50">
-        <div className="mx-auto max-w-6xl px-4 py-12">
-          <h2 className="text-center text-3xl">কেন তনরা আউটফিটস থেকে কিনবেন?</h2>
-          <p className="mt-2 text-center text-muted-foreground">আপনার বিশ্বাসই আমাদের প্রতিশ্রুতি</p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {trustPoints.map((tp) => (
-              <div key={tp.title} className="rounded-xl border bg-card p-5 text-center">
-                <h3 className="text-lg text-rose-gradient">{tp.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">{tp.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-3xl px-4 py-12">
-        <h2 className="text-center text-3xl">সাধারণ জিজ্ঞাসা</h2>
-        <div className="mt-8 space-y-3">
-          {faqs.map((f) => (
-            <details key={f.q} className="group rounded-xl border bg-card p-5 open:shadow-glow">
-              <summary className="cursor-pointer list-none font-medium">{f.q}</summary>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">{f.a}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-3xl px-4 py-14 text-center">
-        <p className="mb-3 text-sm text-primary">দুটি নাম, একটি স্বপ্ন</p>
-        <h2 className="text-3xl">রাফি ও টনির তনরা আউটফিটস</h2>
-        <p className="mt-5 leading-8 text-muted-foreground">
-          রাফি ও টনি—আমাদের দুজনের নামের ছোঁয়া থেকেই তনরা আউটফিটস। একটি ল্যাপটপ আর পোশাকের প্রতি ভালোবাসা নিয়ে ঘর থেকে শুরু হয়েছিল এই পথচলা। আমাদের স্বপ্ন, প্রতিটি নারী যেন সাশ্রয়ী দামে নিজের রুচির পোশাক খুঁজে পান এবং আত্মবিশ্বাসী অনুভব করেন। শিক্ষার্থী, কর্মজীবী নারী কিংবা গৃহিণী—স্টাইল সবার জন্য, আর আপনার স্টাইলই আমাদের অগ্রাধিকার।
-        </p>
-        <Link to="/about" className="mt-6 inline-block text-primary underline underline-offset-4">আমাদের পুরো গল্প পড়ুন →</Link>
-      </section>
-    </Page>
-  );
+  return <Page>
+    <section className="border-b">
+      <div className="mx-auto max-w-6xl"><img src={banner.url} alt="তনরা আউটফিটস — নারীদের পোশাকের ব্র্যান্ড" fetchPriority="high" className="w-full" /></div>
+      <div className="mx-auto flex max-w-6xl flex-col justify-between gap-6 px-4 py-7 sm:px-6 md:flex-row md:items-center">
+        <div><h1 className="text-3xl leading-snug sm:text-4xl">তনরা আউটফিটস</h1><p className="mt-2 leading-7 text-muted-foreground">আপনার পছন্দের স্টাইল। প্রতিদিনের স্বাচ্ছন্দ্য।</p></div>
+        <Button asChild variant="premium" size="lg" className="h-12 self-start md:self-auto"><Link to="/shop" search={{}}>কালেকশন দেখুন <ArrowRight /></Link></Button>
+      </div>
+    </section>
+    <nav aria-label="পোশাকের বিভাগ" className="mx-auto grid max-w-6xl grid-cols-2 px-4 sm:px-6 md:grid-cols-4">
+      {categories.map((c,i) => <Link key={c.slug} to="/shop" search={{category:c.slug}} className="group flex items-center gap-3 border-b py-6 md:py-8"><span className="text-xs text-muted-foreground">০{bn(i+1)}</span><span className="text-sm sm:text-base">{c.name}</span><ArrowUpRight size={16} className="ml-auto mr-4 text-primary transition group-hover:translate-x-1"/></Link>)}
+    </nav>
+    <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+      <div className="flex flex-wrap items-end justify-between gap-4"><div><p className="mb-2 text-xs font-medium text-primary">আপনার রুচির পোশাক</p><h2 className="text-2xl sm:text-3xl">বাছাই করা কালেকশন</h2></div><Button asChild variant="link" className="px-0"><Link to="/shop" search={{}}>সব পোশাক <ArrowRight /></Link></Button></div>
+      <div className="mt-7 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 md:gap-x-6">{products.filter(p=>p.featured).map(p=><ProductCard key={p.id} p={p}/>)}</div>
+    </section>
+    <section className="border-y bg-card/40"><div className="mx-auto grid max-w-6xl gap-8 px-4 py-8 sm:px-6 md:grid-cols-3">
+      {[{icon:Truck,title:"সারাদেশে ডেলিভারি",text:"ঢাকার ভেতরে ৳৮০ · বাইরে ৳১৫০"},{icon:Banknote,title:"ক্যাশ অন ডেলিভারি",text:"পণ্য গ্রহণের সময় মূল্য পরিশোধ"},{icon:MessageCircle,title:"সরাসরি গ্রাহক সহায়তা",text:"সাইজ ও পোশাক সম্পর্কে জানতে যোগাযোগ করুন"}].map(({icon:Icon,title,text})=><div key={title} className="flex items-start gap-4"><Icon size={24} className="shrink-0 text-primary"/><div><h3 className="font-sans text-base font-medium">{title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{text}</p></div></div>)}
+    </div></section>
+    <section className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 md:gap-20">
+      <div><p className="text-xs text-primary">আমাদের দর্শন</p><h2 className="mt-3 text-3xl leading-snug">রুচি ও স্বাচ্ছন্দ্যের<br/>সঙ্গে আত্মবিশ্বাস</h2><p className="mt-5 max-w-md leading-8 text-muted-foreground">রাফি ও টনির উদ্যোগে তনরা আউটফিটসের পথচলা। সাশ্রয়ী দামে মার্জিত পোশাক এবং যত্নশীল গ্রাহকসেবা—এই দুই অগ্রাধিকার নিয়ে বাংলাদেশের নারীদের জন্য আমাদের কাজ।</p><Button asChild variant="link" className="mt-4 px-0"><Link to="/about">আমাদের সম্পর্কে <ArrowRight/></Link></Button><a href={brand.facebook} target="_blank" rel="noopener noreferrer" className="mt-3 block text-sm text-muted-foreground hover:text-primary">ফেসবুকে আমাদের সাম্প্রতিক আপডেট <ArrowUpRight size={14} className="inline"/></a></div>
+      <div><h2 className="text-2xl">কেনাকাটার আগে</h2><div className="mt-5">{faqs.map(f=><details key={f.q} className="group border-b py-5"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium">{f.q}<Plus className="size-4 shrink-0 text-primary transition group-open:rotate-45"/></summary><p className="mt-3 text-sm leading-7 text-muted-foreground">{f.a}</p></details>)}</div><Button asChild variant="link" className="mt-4 px-0"><a href={brand.whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle/>হোয়াটসঅ্যাপে কথা বলুন</a></Button></div>
+    </section>
+  </Page>;
 }

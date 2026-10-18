@@ -35,19 +35,19 @@
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.5rem;
   --background: oklch(0.13 0.005 20);
   --foreground: oklch(0.95 0.015 40);
   --card: oklch(0.18 0.008 20);
   --card-foreground: oklch(0.95 0.015 40);
   --popover: oklch(0.18 0.008 20);
   --popover-foreground: oklch(0.95 0.015 40);
-  --primary: oklch(0.76 0.09 50);
+  --primary: oklch(0.82 0.065 20);
   --primary-foreground: oklch(0.15 0.01 20);
   --secondary: oklch(0.23 0.01 20);
   --secondary-foreground: oklch(0.95 0.015 40);
   --muted: oklch(0.22 0.008 20);
-  --muted-foreground: oklch(0.7 0.02 40);
+  --muted-foreground: oklch(0.76 0.015 40);
   --accent: oklch(0.82 0.08 10);
   --accent-foreground: oklch(0.15 0.01 20);
   --destructive: oklch(0.6 0.2 25);
@@ -106,4 +106,14 @@
   border-radius: var(--radius);
   padding: 0.65rem 0.9rem;
   &:focus { outline: 2px solid var(--ring); outline-offset: 1px; }
+}
+
+@layer base {
+  body { font-size: 16px; line-height: 1.6; letter-spacing: 0; }
+  summary::-webkit-details-marker { display: none; }
+  a, button, input, select, textarea, summary { scroll-margin-top: 100px; }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--ring); outline-offset: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
