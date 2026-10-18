@@ -59,7 +59,7 @@ export const sizeChart = [
   { size: "XXL", bust: "৪৪\"", waist: "৩৮\"", length: "৪৬\"" },
 ];
 
-export const deliveryInfo = "ঢাকার ভেতরে ১-২ কার্যদিবস, ঢাকার বাইরে ৩-৫ কার্যদিবসে হোম ডেলিভারি। পণ্য হাতে পেয়ে চেক করে মূল্য পরিশোধের সুবিধা। ৭ দিনের সহজ এক্সচেঞ্জ পলিসি।" + delivery;
+export const deliveryInfo = "ঢাকার ভেতরে ডেলিভারি চার্জ ৳৮০, ঢাকার বাইরে ৳১৫০। সম্ভাব্য ডেলিভারির সময় ও বিনিময়ের শর্ত অর্ডারের আগে আমাদের সঙ্গে যোগাযোগ করে নিশ্চিত করুন।";
 
 export const price = (p: Product) => p.sale_price ?? p.regular_price;
 export const bn = (n: number) => n.toLocaleString("bn-BD");

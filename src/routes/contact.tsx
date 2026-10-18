@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, Mail, MapPin, MessageCircle, Instagram, Music2 } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Instagram, Music2, Facebook } from "lucide-react";
 import { Page } from "@/components/Layout";
 import { brand } from "@/lib/brand";
 
@@ -40,6 +40,7 @@ function Contact() {
       <section className="mt-12 border-t pt-8">
         <h2 className="text-2xl">আমাদের সঙ্গে থাকুন</h2>
         <div className="mt-5 flex flex-wrap gap-6">
+          <a href={brand.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline"><Facebook size={20} aria-hidden="true" />ফেসবুক</a>
           <a href={brand.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline"><Instagram size={20} aria-hidden="true" />ইনস্টাগ্রাম</a>
           <a href={brand.tiktok} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline"><Music2 size={20} aria-hidden="true" />টিকটক</a>
         </div>

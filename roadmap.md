@@ -1,3 +1,3 @@
-- [ ] Add supplied brand story to home and an about page.
-- [ ] Add verified contact details, social links and privacy contact information.
-- [ ] Verify pages and contact links.
+- [ ] Refine home, navigation and product presentation with concise professional Bangla.
+- [ ] Improve collection browsing and add the verified Facebook link.
+- [ ] Verify shopping flow, page metadata and contact pages.

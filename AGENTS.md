@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep public business contact data in a shared browser-safe brand module so contact, footer and policy pages remain consistent and portable.
+- Use the shared Button component for shopping controls and semantic CSS tokens for the storefront theme so presentation stays consistent and portable.
