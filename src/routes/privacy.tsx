@@ -32,7 +32,7 @@ const sections = [
   },
   {
     title: "তথ্যের সুরক্ষা",
-    body: "আপনার অর্ডারের তথ্য সুরক্ষিতভাবে সংরক্ষণ করা হয় এবং শুধুমাত্র অর্ডার ব্যবস্থাপনার সাথে যুক্ত ব্যক্তিরাই এটি দেখতে পান। আমরা নিয়মিত আমাদের সিস্টেমের নিরাপত্তা পর্যালোচনা করি।",
+    body: "এই ওয়েবসাইটে ব্যাগ ও পূরণ করা অর্ডারের তথ্য আপনার ব্যবহৃত ব্রাউজারে সংরক্ষিত থাকে; এগুলো স্বয়ংক্রিয়ভাবে আমাদের কাছে পাঠানো হয় না। শেয়ার করা ডিভাইসে ব্যক্তিগত তথ্য দেওয়ার সময় সতর্ক থাকুন। সরাসরি ফোন বা হোয়াটসঅ্যাপে যোগাযোগ করলে সেই সেবার মাধ্যমেই তথ্য আদান-প্রদান হয়।",
   },
   {
     title: "আপনার অধিকার",
@@ -55,13 +55,13 @@ function Privacy() {
         </p>
         <div className="mt-10 space-y-8">
           {sections.map((s, i) => (
-            <div key={s.title} className="rounded-xl border bg-card p-6">
-              <h2 className="text-xl text-rose-gradient">{i + 1}. {s.title}</h2>
+            <div key={s.title} className="border-t pt-6">
+              <h2 className="text-xl text-rose-gradient">{(i + 1).toLocaleString("bn-BD")}. {s.title}</h2>
               <p className="mt-3 leading-8 text-muted-foreground">{s.body}</p>
             </div>
           ))}
         </div>
-        <p className="mt-10 rounded-xl border bg-card p-6 text-sm leading-7 text-muted-foreground">
+        <p className="mt-10 border-t pt-6 text-sm leading-7 text-muted-foreground">
           প্রাইভেসি সংক্রান্ত প্রশ্ন বা তথ্য সংশোধনের অনুরোধের জন্য কল করুন: <a href={`tel:${brand.phone}`} className="text-primary hover:underline">{brand.phoneLabel}</a>।
           {" "}ইমেইল: <a href={`mailto:${brand.email}`} className="break-all text-primary hover:underline">{brand.email}</a> অথবা <a href={brand.whatsapp} className="text-primary hover:underline">হোয়াটসঅ্যাপে মেসেজ দিন</a>।
         </p>
