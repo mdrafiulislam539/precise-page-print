@@ -33,6 +33,7 @@ export function Header() {
         <Link to="/about" onClick={() => setOpen(false)}>আমাদের সম্পর্কে</Link>
         <Link to="/contact" onClick={() => setOpen(false)}>যোগাযোগ</Link>
         <Link to="/privacy" onClick={() => setOpen(false)}>প্রাইভেসি পলিসি</Link>
+        <Link to="/return-policy" onClick={() => setOpen(false)}>রিটার্ন পলিসি</Link>
       </nav>}
     </header>
   </>;
@@ -53,7 +54,7 @@ export function Footer() {
         </div>
       </div>
       <div><h2 className="font-sans text-sm font-semibold">কালেকশন</h2><div className="mt-4 space-y-3 text-muted-foreground">{categories.map(c => <Link key={c.slug} to="/shop" search={{ category:c.slug }} className="block hover:text-primary">{c.name}</Link>)}</div></div>
-      <div><h2 className="font-sans text-sm font-semibold">প্রয়োজনীয় তথ্য</h2><div className="mt-4 space-y-3 text-muted-foreground"><Link to="/about" className="block hover:text-primary">আমাদের সম্পর্কে</Link><Link to="/contact" className="block hover:text-primary">যোগাযোগ</Link><Link to="/privacy" className="block hover:text-primary">প্রাইভেসি পলিসি</Link><p className="leading-7">ঢাকার ভেতরে ৳৮০<br />ঢাকার বাইরে ৳১৫০</p><p>ক্যাশ অন ডেলিভারি · বিকাশ · নগদ</p></div></div>
+      <div><h2 className="font-sans text-sm font-semibold">প্রয়োজনীয় তথ্য</h2><div className="mt-4 space-y-3 text-muted-foreground"><Link to="/about" className="block hover:text-primary">আমাদের সম্পর্কে</Link><Link to="/contact" className="block hover:text-primary">যোগাযোগ</Link><Link to="/privacy" className="block hover:text-primary">প্রাইভেসি পলিসি</Link><Link to="/return-policy" className="block hover:text-primary">রিটার্ন পলিসি</Link><p className="leading-7">ঢাকার ভেতরে ৳৮০<br />ঢাকার বাইরে ৳১৫০</p><p>ক্যাশ অন ডেলিভারি · বিকাশ · নগদ</p></div></div>
       <div className="min-w-0"><h2 className="font-sans text-sm font-semibold">গ্রাহক সহায়তা</h2><a href={`tel:${brand.phone}`} className="mt-4 block text-primary">{brand.phoneLabel}</a><a href={`mailto:${brand.email}`} className="mt-3 block break-all text-muted-foreground hover:text-primary">{brand.email}</a><p className="mt-3 leading-7 text-muted-foreground">{brand.address}</p><a href={brand.tiktok} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-muted-foreground hover:text-primary">টিকটক <ArrowUpRight className="inline size-3" /></a></div>
     </div>
     <div className="mx-auto max-w-6xl border-t px-4 py-5 text-xs text-muted-foreground sm:px-6">© ২০২৬ তনরা আউটফিটস। সর্বস্বত্ব সংরক্ষিত।</div>

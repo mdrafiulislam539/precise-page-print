@@ -109,7 +109,7 @@ function Checkout() {
               <input aria-label="ট্রানজেকশন আইডি" name="trx" placeholder="ট্রানজেকশন আইডি *" className="field mt-3" />
             </div>
           )}
-          <p className="text-xs leading-6 text-muted-foreground">তথ্য এই ব্রাউজারে সংরক্ষিত হবে। অর্ডার নিশ্চিত করতে সরাসরি আমাদের সঙ্গে যোগাযোগ করুন। <Link to="/privacy" className="text-primary underline">প্রাইভেসি পলিসি</Link></p>
+          <p className="text-xs leading-6 text-muted-foreground">তথ্য এই ব্রাউজারে সংরক্ষিত হবে। অর্ডার নিশ্চিত করতে সরাসরি আমাদের সঙ্গে যোগাযোগ করুন। <Link to="/privacy" className="text-primary underline">প্রাইভেসি পলিসি</Link> · <Link to="/return-policy" className="text-primary underline">রিটার্ন পলিসি</Link></p>
           {err && <p className="text-sm text-destructive">{err}</p>}
         </div>
 
