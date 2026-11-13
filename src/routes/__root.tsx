@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "তনরা আউটফিটস — নারীদের প্রিমিয়াম ফ্যাশন" },
-      { name: "description", content: "TonRa Outfits — শাড়ি, থ্রি-পিস, কুর্তি ও ওয়েস্টার্ন ওয়্যার অনলাইন শপ।" },
+      { name: "description", content: "তনরা আউটফিটস — নারীদের ওয়ান-পিস, সেলোয়ার ও কুর্তিসহ টু-পিস এবং থ্রি-পিস পোশাকের অনলাইন কালেকশন।" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "TonRa Outfits" },
       { name: "twitter:card", content: "summary_large_image" },
