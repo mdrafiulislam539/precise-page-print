@@ -9,8 +9,8 @@ import { brand } from "@/lib/brand";
 export const Route = createFileRoute("/")({
   staticData: { sitemap:true },
   head: () => ({ meta:[
-    { title:"তনরা আউটফিটস | শাড়ি, থ্রি-পিস, কুর্তি ও ওয়েস্টার্ন ড্রেস" },
-    { name:"description", content:"তনরা আউটফিটসে নারীদের শাড়ি, থ্রি-পিস, কুর্তি ও ওয়েস্টার্ন পোশাকের বাছাই করা কালেকশন। সারাদেশে ডেলিভারি ও ক্যাশ অন ডেলিভারি।" },
+    { title:"তনরা আউটফিটস | ওয়ান-পিস, টু-পিস ও থ্রি-পিস" },
+    { name:"description", content:"তনরা আউটফিটসে নারীদের জন্য বাছাই করা ওয়ান-পিস, সেলোয়ার ও কুর্তিসহ টু-পিস এবং থ্রি-পিস পোশাক। সারাদেশে ডেলিভারি ও ক্যাশ অন ডেলিভারি।" },
     { property:"og:title", content:"তনরা আউটফিটস — আপনার স্টাইল, আমাদের অগ্রাধিকার" },
     { property:"og:description", content:"রুচি, স্বাচ্ছন্দ্য ও আত্মবিশ্বাসের জন্য বাছাই করা নারীদের পোশাক।" },
     { property:"og:type", content:"website" },
@@ -43,7 +43,7 @@ function Index() {
       {[{icon:Truck,title:"সারাদেশে ডেলিভারি",text:"ঢাকার ভেতরে ৳৮০ · বাইরে ৳১৫০"},{icon:Banknote,title:"ক্যাশ অন ডেলিভারি",text:"পণ্য গ্রহণের সময় মূল্য পরিশোধ"},{icon:MessageCircle,title:"সরাসরি গ্রাহক সহায়তা",text:"সাইজ ও পোশাক সম্পর্কে জানতে যোগাযোগ করুন"}].map(({icon:Icon,title,text})=><div key={title} className="flex items-start gap-4"><Icon size={24} className="shrink-0 text-primary"/><div><h3 className="font-sans text-base font-medium">{title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{text}</p></div></div>)}
     </div></section>
     <section className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 md:gap-20">
-      <div><p className="text-xs text-primary">আমাদের দর্শন</p><h2 className="mt-3 text-3xl leading-snug">রুচি ও স্বাচ্ছন্দ্যের<br/>সঙ্গে আত্মবিশ্বাস</h2><p className="mt-5 max-w-md leading-8 text-muted-foreground">রাফি ও টনির উদ্যোগে তনরা আউটফিটসের পথচলা। সাশ্রয়ী দামে মার্জিত পোশাক এবং যত্নশীল গ্রাহকসেবা—এই দুই অগ্রাধিকার নিয়ে বাংলাদেশের নারীদের জন্য আমাদের কাজ।</p><Button asChild variant="link" className="mt-4 px-0"><Link to="/about">আমাদের সম্পর্কে <ArrowRight/></Link></Button><a href={brand.facebook} target="_blank" rel="noopener noreferrer" className="mt-3 block text-sm text-muted-foreground hover:text-primary">ফেসবুকে আমাদের সাম্প্রতিক আপডেট <ArrowUpRight size={14} className="inline"/></a></div>
+      <div><p className="text-xs text-primary">আমাদের দর্শন</p><h2 className="mt-3 text-3xl leading-snug">রুচি ও স্বাচ্ছন্দ্যের<br/>সঙ্গে আত্মবিশ্বাস</h2><p className="mt-5 max-w-md leading-8 text-muted-foreground">রাফি ও তন্নীর উদ্যোগে তনরা আউটফিটসের পথচলা। সাশ্রয়ী দামে মার্জিত পোশাক এবং যত্নশীল গ্রাহকসেবা—এই দুই অগ্রাধিকার নিয়ে বাংলাদেশের নারীদের জন্য আমাদের কাজ।</p><Button asChild variant="link" className="mt-4 px-0"><Link to="/about">আমাদের সম্পর্কে <ArrowRight/></Link></Button><a href={brand.facebook} target="_blank" rel="noopener noreferrer" className="mt-3 block text-sm text-muted-foreground hover:text-primary">ফেসবুকে আমাদের সাম্প্রতিক আপডেট <ArrowUpRight size={14} className="inline"/></a></div>
       <div><h2 className="text-2xl">কেনাকাটার আগে</h2><div className="mt-5">{faqs.map(f=><details key={f.q} className="group border-b py-5"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium">{f.q}<Plus className="size-4 shrink-0 text-primary transition group-open:rotate-45"/></summary><p className="mt-3 text-sm leading-7 text-muted-foreground">{f.a}</p></details>)}</div><Button asChild variant="link" className="mt-4 px-0"><a href={brand.whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle/>হোয়াটসঅ্যাপে কথা বলুন</a></Button></div>
     </section>
   </Page>;

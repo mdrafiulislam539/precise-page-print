@@ -10,8 +10,8 @@ export const Route = createFileRoute("/shop")({
   validateSearch: (s: Record<string, unknown>): { category?: string | undefined } => ({ category: typeof s["category"] === "string" ? s["category"] : undefined }),
   head: () => ({
     meta: [
-      { title: "শপ | লেডিস শাড়ি, থ্রি-পিস ও কুর্তি অনলাইনে কিনুন — তনরা আউটফিটস" },
-      { name: "description", content: "তনরা আউটফিটসের সব কালেকশন: বেনারসি শাড়ি, এমব্রয়ডারি থ্রি-পিস, কটন কুর্তি ও ওয়েস্টার্ন ড্রেস অনলাইনে দেখুন।" },
+      { title: "নারীদের পোশাকের কালেকশন | ওয়ান-পিস, টু-পিস ও থ্রি-পিস — তনরা আউটফিটস" },
+      { name: "description", content: "তনরা আউটফিটসের ওয়ান-পিস, সেলোয়ার ও কুর্তিসহ টু-পিস এবং থ্রি-পিস কালেকশন দেখুন। পছন্দের পোশাক বেছে নিয়ে সহজে অর্ডার করুন।" },
       { property: "og:title", content: "শপ — তনরা আউটফিটস" },
       { property: "og:description", content: "নারীদের প্রিমিয়াম পোশাকের সম্পূর্ণ কালেকশন।" },
       { property: "og:type", content: "website" },
@@ -32,7 +32,7 @@ function Shop() {
     <Page>
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <h1 className="text-3xl">{cat ? cat.name : "সব কালেকশন"}</h1>
-        <p className="mt-2 text-muted-foreground">{cat ? cat.description : "নারীদের জন্য বাছাই করা প্রিমিয়াম পোশাক — শাড়ি, থ্রি-পিস, কুর্তি ও ওয়েস্টার্ন ওয়্যার।"}</p>
+        <p className="mt-2 text-muted-foreground">{cat ? cat.description : "নারীদের জন্য বাছাই করা ওয়ান-পিস, সেলোয়ার ও কুর্তিসহ টু-পিস এবং থ্রি-পিস পোশাক।"}</p>
         <nav aria-label="কালেকশন বিভাগ" className="mt-6 flex flex-wrap gap-x-6 gap-y-3 border-b">
           <Link to="/shop" search={{}} className={`border-b-2 pb-3 text-sm ${!cat ? "border-primary text-primary" : "border-transparent text-muted-foreground hover:text-primary"}`}>সব</Link>
           {categories.map(c => <Link key={c.slug} to="/shop" search={{ category:c.slug }} className={`border-b-2 pb-3 text-sm ${cat?.slug === c.slug ? "border-primary text-primary" : "border-transparent text-muted-foreground hover:text-primary"}`}>{c.name}</Link>)}
