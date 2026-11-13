@@ -1,4 +1,4 @@
 - [x] Refine home, navigation and product presentation with concise professional Bangla.
 - [x] Improve collection browsing and add the verified Facebook link.
 - [x] Correct the founder spelling and align category names across home, shop and metadata.
-- [ ] Verify shopping flow, page metadata and contact pages.
+- [x] Verify shopping flow, page metadata and contact pages.
